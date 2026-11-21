@@ -1,0 +1,159 @@
+/* start variables */
+:root{
+    --gray-color: #edeef0;
+    --orange-color: #ff5945; 
+    --background-color: linear-gradient(135deg, #153677, #4e085f); 
+    --white-color: white; 
+}
+/* end variables */
+
+/* start gloables roules */
+*{
+    padding: 0; 
+    margin: 0; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    background:var(--background-color);
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+/* end globales roules */
+/* start to-do-list */
+.to-do-list{
+    background-color: var(--white-color); 
+    border-radius: 10px; 
+    padding: 20px;
+    transition: 0.3s;
+
+}
+.to-do-list .text{
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.to-do-list .text h1{
+    margin: 0; 
+    padding: 0;
+}
+.to-do-list .text img{
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover;
+}
+.to-do-list .tools{
+    position: relative;
+}
+.to-do-list .tools input{
+    border: none;
+    background-color: var(--gray-color); 
+    padding: 10px 100px 10px 15px;
+    border-radius: 30px;
+    display: block; 
+    font-weight: bold;
+}
+.to-do-list .tools input:focus{
+    outline: none;
+}
+.to-do-list .tools input::placeholder{
+    opacity: 1;
+    transition: 0.3s;
+}
+.to-do-list .tools input:focus::placeholder{
+    opacity: 0;
+}
+.to-do-list .tools button{
+    padding: 10px 30px;
+    border-radius: 30px; 
+    background-color: var(--orange-color); 
+    color: var(--white-color); 
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    position: absolute;
+    top: 0; 
+    right: 0;
+    transition: 0.3s;
+}
+.to-do-list .tools button:hover{
+    opacity: 0.8;
+}
+.disabled-button{
+    opacity: 0.6;
+}
+.task{
+    margin-top: 10px;
+}
+.task .box{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.task .box .txt{
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+.task .box .txt span{
+    display: block; 
+    width: 20px;
+    height: 20px; 
+    border: 1px solid black; 
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.task .box > span {
+    transition: 0.3s;
+    cursor: pointer; 
+    display: flex; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%;
+    justify-content: center; 
+    align-items: center;
+}
+.task .box > span:hover{
+    background-color: var(--gray-color);
+}
+/* end to-do-list */
+/* start event modify class */
+.do-it{
+    text-decoration: line-through;
+    color: var(--orange-color);
+}
+.do-it span{
+    background-color: var(--orange-color);
+}
+/* end event modify class */
+
+/* start error-alert */
+.error-alert{
+    background-color: red; 
+    width: 300px; 
+    border-radius: 30px; 
+    position: fixed; 
+    transition: 0.3s;
+    top: -10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 30px;
+    animation: message 0.5s forwards;
+    z-index: 1; 
+    text-align: center;
+}
+@keyframes message{
+    from{
+        top: -10px; 
+    }
+    to{
+        top: 20px; 
+    }
+}
